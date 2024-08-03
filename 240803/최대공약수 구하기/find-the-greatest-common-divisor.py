@@ -1,4 +1,4 @@
-def gsd(n, m):
+def gcd(n, m):
     num = 1
     if n >= m:
         big_num, small_num = n, m
@@ -12,4 +12,4 @@ def gsd(n, m):
             break
 
 num1, num2 = map(int, input().split())
-gsd(num1, num2)
+gcd(num1, num2)
