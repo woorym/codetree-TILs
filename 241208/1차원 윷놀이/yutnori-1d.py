@@ -16,27 +16,27 @@ def print_answer(num):
     #     print(i, end = " ")
     # print()
     for i in arr:
-        if i >= 6:
+        if i >= m - 1:
             cnt += 1
     
     result = max(num, cnt)
     return result
 
-def again(current, check, pt):
+def again(current, check):
     global num
     if current == n + 1:
         num = print_answer(num)
         return
 
     for i in range(k):
-        if pt > i:
-            continue
+        # if pt > i:
+        #     continue
         # print(f"i : {i}, current : {current}, check : {dist[check]}")
         arr[i] += dist[check]
-        again(current + 1, check + 1, i)
+        again(current + 1, check + 1)
         arr[i] -= dist[check]
 
      
-again(1, 0, -1)
+again(1, 0)
 print(num)
 
