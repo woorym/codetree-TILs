@@ -4,7 +4,7 @@ k, n = map(int, input().split())
 arr= []
 
 def print_answer():
-    check = []
+    check = [0]
     cnt = 0
     for i in range(len(arr) - 1):        
         if arr[i] == arr[i + 1]:
