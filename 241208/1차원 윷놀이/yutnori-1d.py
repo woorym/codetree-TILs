@@ -12,6 +12,9 @@ num = 0
 
 def print_answer(num):
     cnt = 0
+    # for i in arr:
+    #     print(i, end = " ")
+    # print()
     for i in arr:
         if i >= 6:
             cnt += 1
@@ -19,16 +22,21 @@ def print_answer(num):
     result = max(num, cnt)
     return result
 
-def again(current, check):
+def again(current, check, pt):
     global num
-    if current == n:
+    if current == n + 1:
         num = print_answer(num)
         return
 
     for i in range(k):
+        if pt > i:
+            continue
+        # print(f"i : {i}, current : {current}, check : {dist[check]}")
         arr[i] += dist[check]
-        again(current + 1, check + 1)
+        again(current + 1, check + 1, i)
         arr[i] -= dist[check]
+
      
-again(0, 0)
+again(1, 0, -1)
 print(num)
+
