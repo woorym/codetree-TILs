@@ -11,11 +11,11 @@ def again(current, cnt):
     if current == n - 1:
         arr.append(cnt) 
         return
-
-    for i in range(1, num_list[current] + 1):
-        cnt += 1
-        again(current + i, cnt)
-        cnt -= 1
+    if current < n:
+        for i in range(1, num_list[current] + 1):
+            cnt += 1
+            again(current + i, cnt)
+            cnt -= 1
 
 
 
